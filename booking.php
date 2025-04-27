@@ -17,7 +17,7 @@
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="packages.html">Packages</a></li>
-            <li><a href="booking.html" class="active">Booking</a></li>
+            <li><a href="booking.php" class="active">Booking</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
     </header>
