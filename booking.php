@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Adventure</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header class="navbar">
         <div class="logo">
@@ -26,9 +28,31 @@
             <form id="booking-form">
                 <label for="package">Choose Your Package:</label>
                 <select id="package" name="package">
-                    <option value="diamond">Diamond Adventure Package - £1,200</option>
-                    <option value="silver">Silver Adventure Package - £2,500</option>
-                    <option value="gold">Gold Adventure Package - £4,500</option>
+                    <?php
+                    $host = "localhost";
+                    $username = "root";
+                    $password = "root";
+                    $database = "mgmt_webapp_msc";
+
+                    $mysqli = new mysqli($host, $username, $password, $database);
+
+                    if ($mysqli->connect_error) {
+                        die("Connection failed: " . $mysqli->connect_error);
+                    }
+
+                    $get_products_sql = "SELECT package_name, cost FROM holiday_packages";
+                    $result = $mysqli->query($get_products_sql);
+
+                    if ($result) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='" . htmlspecialchars($row['package_name']) . "'>" . htmlspecialchars($row['package_name']) . " - £" . htmlspecialchars($row['cost']) . "</option>";
+                        }
+                        $result->free();
+                    } else {
+                        echo "<option value=''>Error loading packages</option>";
+                    }
+                    $mysqli->close();
+                    ?>
                 </select>
 
                 <label for="adults">Number of Adults:</label>
@@ -36,6 +60,7 @@
 
                 <label for="children">Number of Children:</label>
                 <input type="number" id="children" name="children" min="0" value="0">
+                <span class="discount-note">(Children's tickets are 30% off)</span>
             </form>
         </section>
 
@@ -44,14 +69,17 @@
             <p><strong>Package:</strong> <span id="selected-package">Diamond Adventure Package</span></p>
             <p><strong>Adults:</strong> <span id="adults-count">1</span></p>
             <p><strong>Children:</strong> <span id="children-count">0</span></p>
+            <p><strong>Details:</strong> <span id="cost-details">1 Adult (£1200) + 0 Child (£0) + 15% VAT</span></p>
             <p><strong>Total Cost:</strong> £<span id="total-cost">1,200</span></p>
         </section>
+
     </main>
 
     <footer>
         <p>Note: This is a fictitious website developed by a student as part of a programming assignment. None of the content on this page is meant to be genuine nor should it be taken as such.</p>
     </footer>
 
-    <script src="script.js"></script> <!-- 连接到JS文件 -->
+    <script src="script.js"></script>
 </body>
+
 </html>
