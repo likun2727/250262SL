@@ -139,18 +139,16 @@ footer {
     text-align: center;
     padding: 20px 10px;
     font-size: 0.9rem;
-    margin-top: auto; /* 将 footer 推到底部 */
+    margin-top: auto; 
 }
 
-/* Package Page Styles */
 .package-main {
     padding: 60px 10%;
     display: flex;
     justify-content: space-between;
-    gap: 30px; /* Ensure there's space between packages */
-    flex-wrap: wrap; /* Makes the layout responsive */
+    gap: 30px;
     background-color: #f7f7f7;
-    flex-grow: 1; /* Ensure this section expands to fill available space */
+    flex-grow: 1; 
 }
 
 .package-card {
@@ -159,7 +157,7 @@ footer {
     border-radius: 12px;
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: calc(33.33% - 20px); /* Ensures the cards are three per row */
+    width: calc(33.33% - 20px); 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
     height: 100%;
@@ -364,4 +362,85 @@ footer {
     border: 1px solid #ccc;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
+}
+
+.package-card {
+    background-color: #f4f4f4;  /* 默认背景色 */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.diamond-package {
+    border: 3px solid #FFD700;
+    background: linear-gradient(135deg, #FFD700, #FFEA00);  /* 渐变金色 */
+    color: #333;
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.diamond-package:hover {
+    transform: scale(1.05);
+}
+
+/* 为所有套餐卡片设置基础样式 */
+.package-card {
+    background-color: #fff;  /* 白色背景 */
+    padding: 20px;
+    border-radius: 12px;
+    width: calc(33.33% - 20px);  /* 每个卡片宽度 */
+    margin: 10px; 
+    box-sizing: border-box;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);  /* 阴影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* 平滑的动画过渡效果 */
+}
+
+.package-card:hover {
+    transform: translateY(-10px);  /* 鼠标悬停时卡片微微向上移动 */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);  /* 提升阴影效果 */
+}
+
+/* Diamond Package */
+.diamond-package {
+    border: 3px solid #FFD700;
+    background: linear-gradient(135deg, #fff8e1, #FFD700);
+    color: #333;  /* 字体颜色 */
+}
+
+.diamond-package .package-icon i {
+    color: #FFD700;
+}
+
+/* Silver Package */
+.silver-package {
+    border: 3px solid #B0B0B0;
+    background: linear-gradient(135deg, #E0E0E0, #C0C0C0);
+    color: #333; 
+}
+
+.silver-package .package-icon i {
+    color: #B0B0B0; 
+}
+
+/* Gold Package */
+.gold-package {
+    border: 3px solid #FFB84D;
+    background: linear-gradient(135deg, #FFCC80, #FF8C00); 
+    color: #333;
+}
+
+.gold-package .package-icon i {
+    color: #FF8C00; 
+}
+
+.package-card h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.package-card p {
+    font-size: 1em;
+    margin: 5px 0;
 }
