@@ -29,9 +29,9 @@
                 <label for="package">Choose Your Package:</label>
                 <select id="package" name="package">
                     <?php
-                    $host = "localhost";
-                    $username = "root";
-                    $password = "root";
+                    $host = "srv02958.soton.ac.uk";
+                    $username = "MANG6531_student";
+                    $password = "tintin6531";
                     $database = "mgmt_webapp_msc";
 
                     $mysqli = new mysqli($host, $username, $password, $database);

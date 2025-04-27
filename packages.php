@@ -1,8 +1,8 @@
 <?php
-$host = "localhost"; 
-$username = "root";  
-$password = "root";  
-$database = "mgmt_webapp_msc"; 
+$host = "srv02958.soton.ac.uk";
+$username = "MANG6531_student";
+$password = "tintin6531";
+$database = "mgmt_webapp_msc";
 
 $mysqli = new mysqli($host, $username, $password, $database);
 
@@ -20,6 +20,7 @@ if (!$result) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,6 +86,7 @@ if (!$result) {
     </footer>
 
 </body>
+
 </html>
 
 <?php
